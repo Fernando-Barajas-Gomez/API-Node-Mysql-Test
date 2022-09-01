@@ -7,7 +7,12 @@ const productos = require('../controllers/productosController');
 const categorias = require('../controllers/categoriasController');
 
 //----- Ruta inicial -----//
-router.get('/', productos.obtenerProductos);
+router.get('/', (req, res)  => {
+    return res.status(200).json({message: "OK. Bienvenido a la api." });
+});
+
+//----- Ruta para obtener los productos -----//
+router.get('/products', productos.obtenerProductos);
 
 //----- Ruta para obtener los productos de cierta categoria -----//
 router.get('/category/:categoria', categorias.obtenerCategoria);
