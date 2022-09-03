@@ -14,6 +14,9 @@ router.get('/', (req, res)  => {
 //----- Ruta para obtener los productos -----//
 router.get('/products', productos.obtenerProductos);
 
+//----- Ruta para obtener cierto productos -----//
+router.get('/product/:producto', productos.obtenerProducto);
+
 //----- Ruta para obtener los productos de cierta categoria -----//
 router.get('/category/:categoria', categorias.obtenerCategoria);
 
