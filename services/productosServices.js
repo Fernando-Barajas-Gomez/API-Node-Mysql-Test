@@ -10,7 +10,7 @@ const obtenerProductos = () => {
             if(!error){ //si la consulta no tuvo errores
                 resolve(filas); //retornamos los productos
             }else{
-                reject('Error al obtener los productos');
+                reject('Error al obtener los productos, error: '+error);
             }
         });
     }); 
@@ -21,7 +21,7 @@ const obtenerProducto = (producto) => {
     //retornamos los datos a traves de una promesa
     return new Promise ((resolve, reject) => {
         //generamos la consulta
-        conexion.query('SELECT product.*, category.name AS categoryName FROM product, category WHERE product.category=category.id AND product.name LIKE?', ['%'+producto+'%'], (error, filas, campos) => {
+        conexion.query('SELECT product.*, category.name AS categoryName FROM product, category WHERE product.category=category.id AND product.name LIKE ?', ['%'+producto+'%'], (error, filas, campos) => {
             if(!error){ //si la consulta no tuvo errores
                 resolve(filas); //retornamos los productos
             }else{
