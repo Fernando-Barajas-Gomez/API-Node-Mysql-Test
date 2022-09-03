@@ -17,6 +17,9 @@ router.get('/products', productos.obtenerProductos);
 //----- Ruta para obtener cierto producto -----//
 router.get('/product/:producto', productos.obtenerProducto);
 
+//----- Ruta para obtener los nombres de todas las categorias -----//
+router.get('/categories', categorias.obtenerCategorias);
+
 //----- Ruta para obtener los productos de cierta categoria -----//
 router.get('/category/:categoria', categorias.obtenerCategoria);
 
