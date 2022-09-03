@@ -9,7 +9,7 @@ exports.obtenerCategoria = async function (req, res) {
     try {
         let categoriaResult = await servicio.obtenerCategoria(categoria); //obtenemos el resultado de la consulta a la BD
 
-        if(categoriaResult === []){ //si los datos vienen vacios, significa que 
+        if(categoriaResult === []){ //si los datos vienen vacios, significa que la categoria no se encontro
             return res.status(204).json({ message: "Categoría no encontrada."})
         }
         else{
