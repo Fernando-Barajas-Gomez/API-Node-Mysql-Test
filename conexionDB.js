@@ -9,7 +9,7 @@ const conexion = mysql.createPool({
     user: process.env.USER,
     password: process.env.PASSWORD,
     database: process.env.DATABASE,
-    connectionLimit: 10
+    connectionLimit: 25
 });
 
 //----- Exportamos el modulo -----//
